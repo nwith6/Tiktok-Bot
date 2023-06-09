@@ -65,10 +65,9 @@ def main():
                 
             write_to_uploaded(url, clip_num)
 
-
         uploaded_videos += 1
+        
         print(f"Uploaded ({uploaded_videos}/{total_videos - errored_videos})'{dwnload['message']}'\nSleeping for 6 hours...\n")
-
         sleep(21600) # 6 hours
 
 
