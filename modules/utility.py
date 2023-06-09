@@ -65,5 +65,3 @@ def edit_video(video: mp.VideoClip or mp.VideoFileClip, part: int) -> mp.VideoCl
 def write_to_uploaded(url: str, part: int) -> None:
     with open("./content/uploaded.txt", "a") as f:
         f.write(f"{url} {part}\n")
-
-    
