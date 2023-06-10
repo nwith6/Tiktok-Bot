@@ -2,6 +2,7 @@ import json
 import moviepy as mp
 
 from time import sleep
+from random import randint
 from modules.utility import *
 from modules.tiktok_uploader.upload import upload_video
 
@@ -45,14 +46,14 @@ def main():
 
             fails = 1
             while len(failed) > 0:
-                time_to_wait = "1 hour" if fails >= 5 else "1 minute"
+                time_to_wait = "1-1.5 hours" if fails >= 5 else "1-2 minutes"
 
                 print(f"Failed to upload {fails} times. Retrying in {time_to_wait}.\n")
 
-                if time_to_wait == "1 hour":
-                    sleep(3600) # 1 hour
+                if time_to_wait == "-1.5 hours":
+                    sleep(randint(3600, 5400)) # 1-1.5 hours
                 else:
-                    sleep(60) # 1 minute
+                    sleep(randint(60, 120)) # 1-2 minutes
 
                 failed = upload_video(
                     f"./videos/{clip_num}.mp4",
@@ -67,8 +68,8 @@ def main():
 
         uploaded_videos += 1
         
-        print(f"Uploaded ({uploaded_videos}/{total_videos - errored_videos})'{dwnload['message']}'\nSleeping for 6 hours...\n")
-        sleep(21600) # 6 hours
+        print(f"Uploaded ({uploaded_videos}/{total_videos - errored_videos})'{dwnload['message']}'\nSleeping for 24 hours...\n")
+        sleep(86400) # 24 hours
 
 
 if __name__ == "__main__":
