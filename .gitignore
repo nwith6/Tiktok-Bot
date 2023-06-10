@@ -1,4 +1,3 @@
 __pycache__
-config.json
-cookies.txt
+content/*
 videos/*
