@@ -34,15 +34,16 @@ def main():
         for clip in clips:
             fails = 0
             clip_num = clips.index(clip) + 1
+            args = [
+                f"./videos/{clip_num}.mp4",
+                f"{description['text']} | {description['tags']}",
+                auth["username"],
+                auth["password"],
+                "./content/cookies.txt"
+            ]
 
             edit_video(clip, clip_num)
-            failed = upload_video(
-                f"./videos/{clip_num}.mp4",
-                description=f"{description['text']} | {description['tags']}",
-                username=auth["username"],
-                password=auth["password"],
-                cookies="./content/cookies.txt"
-            )
+            failed = upload_video(args[0], description=args[1], username=args[2], password=args[3], cookies=args[4])
 
             fails = 1
             while len(failed) > 0:
@@ -55,13 +56,7 @@ def main():
                 else:
                     sleep(randint(60, 120)) # 1-2 minutes
 
-                failed = upload_video(
-                    f"./videos/{clip_num}.mp4",
-                    description=f"{description['text']} | {description['tags']}",
-                    username=auth["username"],
-                    password=auth["password"],
-                    cookies="./content/cookies.txt"
-                )
+                failed = upload_video(args[0], description=args[1], username=args[2], password=args[3], cookies=args[4])
                 fails += 1
                 
             write_to_uploaded(url, clip_num)
