@@ -3,11 +3,9 @@ This is a tiktok bot that automatically uploads every video that is found under 
 
 This bot uses a modified version of wkaisertexas's tiktok-uploader found [here](https://github.com/wkaisertexas/tiktok-uploader), functions made by me, moviepy, and pytube.
 
-This bot will download the youtube video, crop it to a black image, split it into 2 minute parts and upload it to tiktok. The bot uses `sleep()` to avoid tiktok moderation, although it can be rate limited it does get a fair few videos out before it is rate limited. After it's rate limited it will wait 1 hour between attempts until it is finally able to post.
+This bot will download the youtube video, crop it to a black image, split it into 2 minute parts and upload it to tiktok. The bot uses `sleep()` to avoid tiktok moderation, although it can be rate limited it does get a fair few videos out before it is rate limited. After it's rate limited it will wait 1-1.5 hours between attempts until it is finally able to post.
 
-The bot after uploading each part of a video back to back will sleep for 6 hours before attempting to trim another video and upload the trimmed parts.
-
-I am currently using the bot for my tiktok page @contentdharmann, it's not doing very well right now lol, but it might blow up you never know!
+The bot after uploading each part of a video back to back will sleep for 24 hours before attempting to trim another video and upload the trimmed parts.
 
 # Setting up for yourself
 1. Install the requirements by running `pip install -r requirements.txt`.
