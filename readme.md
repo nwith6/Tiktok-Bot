@@ -11,7 +11,7 @@ I am currently using the bot for my tiktok page @contentdharmann, it's not doing
 
 # Setting up for yourself
 1. Install the requirements by running `pip install -r requirements.txt`.
-2. Using the [Get cookies.txt LOCALLY](https://chrome.google.com/webstore/detail/cclelndahbckbenkjhflpdbgdldlbecc) paste your tiktok cookies (after logging into your tiktok account) inside `./content/cookies.txt/`.
+2. Using the [Get cookies.txt LOCALLY](https://chrome.google.com/webstore/detail/cclelndahbckbenkjhflpdbgdldlbecc) extension paste your tiktok cookies (after logging into your tiktok account) inside `./content/cookies.txt/`.
 3. In `./content/config.json/` fill out all the details and add youtube links in `video_list`.
 4. Open `./modules/utility.py/` and on line 28 change `end_snip` to your desired value. This snips the end of the video to usually remove a youtubers outro.
 5. Download [ImageMagick](https://imagemagick.org/script/download.php#windows) and navigate to your moviepy installation found in site-packages, find `config_defaults.py` and set `IMAGEMAGICK_BINARY`'s value to the location of your `ImageMagick` installation. (e.g - "C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe").
