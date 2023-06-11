@@ -51,7 +51,7 @@ def main():
 
                 print(f"Failed to upload {fails} times. Retrying in {time_to_wait}.\n")
 
-                if time_to_wait == "1-1.5 hours":
+                if fails >= 5:
                     sleep(randint(3600, 5400)) # 1-1.5 hours
                 else:
                     sleep(randint(60, 120)) # 1-2 minutes
