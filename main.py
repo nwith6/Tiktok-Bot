@@ -32,7 +32,7 @@ def main():
         clips = create_sub_clips(mp.VideoFileClip(f"./videos/video.mp4"))
 
         for clip in clips:
-            fails = 0
+            fails = 1
             clip_num = clips.index(clip) + 1
             args = [
                 f"./videos/{clip_num}.mp4",
@@ -45,7 +45,6 @@ def main():
             edit_video(clip, clip_num)
             failed = upload_video(args[0], description=args[1], username=args[2], password=args[3], cookies=args[4])
 
-            fails = 1
             while len(failed) > 0:
                 time_to_wait = "1-1.5 hours" if fails >= 5 else "1-2 minutes"
 
