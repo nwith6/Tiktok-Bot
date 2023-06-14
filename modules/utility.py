@@ -1,4 +1,4 @@
-import os
+import json
 import pytube
 import moviepy.editor as mp
 import moviepy.video.fx.all as vfx
@@ -66,3 +66,13 @@ def edit_video(video: mp.VideoClip or mp.VideoFileClip, part: int) -> mp.VideoCl
 def write_to_uploaded(url: str, part: int) -> None:
     with open("./content/uploaded.txt", "a") as f:
         f.write(f"{url} {part}\n")
+
+
+def remove_url_from_config(url: str) -> None:
+    with open("./content/config.json", "r") as r:
+        config = json.load(r)
+
+    config["video_list"].remove(url)
+
+    with open("./content/config.json", "w") as w:
+        json.dump(config, w, indent=4)
