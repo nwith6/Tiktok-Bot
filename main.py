@@ -61,10 +61,12 @@ def main():
             write_to_uploaded(url, clip_num)
 
         uploaded_videos += 1
-        
+        remove_url_from_config(url)
+
         print(f"Uploaded ({uploaded_videos}/{total_videos - errored_videos})'{dwnload['message']}'\nSleeping for 24 hours...\n")
         sleep(86400) # 24 hours
 
 
 if __name__ == "__main__":
+    sleep(86400) # 24 hours
     main()
