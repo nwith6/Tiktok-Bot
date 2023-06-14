@@ -40,7 +40,8 @@ def create_sub_clips(video: mp.VideoFileClip) -> list[mp.VideoClip]:
     for i in range(clip_count):
         clips.append(video.subclip(i * 120, (i + 1) * 120))
 
-    clips[-1] = video.subclip((clip_count - 1) * 120, duration)
+    if (clips[-1].duration < 30):
+        clips[-1] = video.subclip((clip_count - 1) * 120, duration)
 
     return clips
 
