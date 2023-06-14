@@ -68,5 +68,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sleep(86400) # 24 hours
     main()
